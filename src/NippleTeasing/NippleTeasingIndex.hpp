@@ -1,12 +1,34 @@
 // -------------------------------------------------------------------------------------------------------------------------------------//
 // Include Guarde
 // -------------------------------------------------------------------------------------------------------------------------------------//
-#ifndef APP_TEST
-#define APP_TEST
+#ifndef NIPPLET_TEASING_INDEX
+#define NIPPLET_TEASING_INDEX
 // -------------------------------------------------------------------------------------------------------------------------------------//
 
-#include <iostream>
+#include <cstdint>
 
+namespace NPL
+{
+
+enum class Position : uint8_t 
+{
+    UpperBreastLeft  =   0,
+    UpperBreastRight =   1,
+    UnderBreastLeft  =   2,
+    UnderBreastRight =   3,
+    SideBreastLeft   =   4,
+    sideBreastRight  =   5,
+
+    NippleLeft   =  10,
+    NippleRight  =  11,
+
+    AreolaLeft   =  20,
+    AreolaRight  =  21,
+    Index
+};
+
+
+}
 
 // -------------------------------------------------------------------------------------------------------------------------------------//
 // Include Guarde
