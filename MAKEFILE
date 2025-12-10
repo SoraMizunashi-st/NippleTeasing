@@ -1,0 +1,28 @@
+CC = g++
+
+BIN_DIR = ./bin/
+SRC_DIR = ./src/
+
+BIN_SF = .exe
+OBJ_SF = .o
+CPP_SF = .cpp
+HPP_SF = .hpp
+
+TEST_MODULE_NAME = App.Test
+
+TEST_BIN = $(BIN_DIR)$(TEST_MODULE_NAME)$(BIN_SF)
+TEST_OBJ = $(BIN_DIR)$(TEST_MODULE_NAME)$(OBJ_SF)
+
+TEST_CPP = $(SRC_DIR)$(TEST_MODULE_NAME)$(CPP_SF)
+TEST_HPP = $(SRC_DIR)$(TEST_MODULE_NAME)$(HPP_SF)
+
+all : $(TEST_BIN)
+
+$(TEST_BIN): $(TEST_OBJ)
+	$(CC) -o $(TEST_BIN) $(TEST_OBJ)
+
+$(TEST_OBJ): $(TEST_CPP) $(TEST_HPP) 
+	$(CC) -c $(TEST_CPP) -o $(TEST_OBJ)
+
+.PHONY: test
+test: $(TEST_BIN)
